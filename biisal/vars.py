@@ -33,12 +33,12 @@ class Var(object):
     
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', 'BIND_ADRESS:PORT')) if not ON_HEROKU or getenv('FQDN', 'https://filetolinkboti-47347982d24c.herokuapp.com') else APP_NAME+'.herokuapp.com'
+    FQDN = str(getenv('FQDN', 'BIND_ADRESS:PORT')) if not ON_HEROKU or getenv('FQDN', '') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL',True))
     if HAS_SSL:
-        URL = "https://{}/".format(FQDN)
+        URL = "https://{}/".format(https://filetolinkboti-47347982d24c.herokuapp.com)
     else:
-        URL = "http://{}/".format(FQDN)
+        URL = "http://{}/".format(https://filetolinkboti-47347982d24c.herokuapp.com)
     DATABASE_URL = str(getenv('DATABASE_URL', 'mongodb+srv://Lazy:Lazy123@cluster0.zigg8lw.mongodb.net/?retryWrites=true&w=majority'))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', '@Uchiha_Developer')) 
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "")).split()))   
